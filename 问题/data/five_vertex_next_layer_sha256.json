@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "verify_five_vertex_next_layer.py": "e83a268db7dd2a0b060e87739225238992910b9046b6b4d2cc533d4e00a81df5",
+    "five_vertex_next_layer_raw.json": "d22595027bddf3dd79dc1f7c3ff1689d10854d497f6acf470d0f988bc6dffab6"
+  }
+}

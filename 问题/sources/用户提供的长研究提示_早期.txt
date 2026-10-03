@@ -1,0 +1,789 @@
+你现在进入一次 LONG AUTONOMOUS RESEARCH SPRINT。
+
+目标不是快速给我一个回答，而是在本次 Codex session 的可用运行时间和计算额度内，持续推进下面的数学研究项目。
+
+==================================================
+0. RUN POLICY
+==================================================
+
+这是一个长期自主任务。
+
+你必须：
+
+1. 不要因为得到第一个 theorem / counterexample / computation result 就结束。
+
+2. 完成一个研究分支后，自动进入下一个优先级最高的分支。
+
+3. 不要问我：
+   - “是否继续”
+   - “要不要我尝试……”
+   - “是否运行更大的搜索”
+   - “是否更新文档”
+
+   你有授权自行继续。
+
+4. 除非：
+   - 系统强制停止；
+   - 额度耗尽；
+   - 工具环境无法继续；
+   - 所有列出的研究任务都已经严格解决，
+
+   否则不要主动结束本 session。
+
+5. 如果一个方向连续失败：
+   - 总结失败原因；
+   - 把它写入 DEAD / FALSE ledger；
+   - 切换到下一个方向；
+   不要在同一路线上无限重复。
+
+6. 如果证明卡住：
+   自动转为以下任一工作：
+   - 小规模 exact enumeration；
+   - SAT / MILP / exhaustive search；
+   - symbolic identity derivation；
+   - counterexample falsification；
+   - normal-form classification；
+   - proof audit；
+   - 研究记录整理。
+
+7. 任何计算都尽量：
+   - 写代码；
+   - 保存代码；
+   - 保存 raw result；
+   - 保存 checksum；
+   - 记录搜索空间规模；
+   - 区分 theorem / exhaustive finite result / heuristic evidence。
+
+==================================================
+1. PROJECT FILE
+==================================================
+
+首先完整阅读当前目录中的：
+
+    graph_orientation_reconfiguration_progress_2026-10-02.md
+
+把它视为项目主状态数据库。
+
+如果还存在：
+    graph_orientation_reconfiguration_progress_2026-10-01.md
+以及其它旧 handoff / progress 文件，
+
+只把它们当历史资料。
+
+若有冲突：
+
+    2026-10-02 current layer
+    >
+    旧记录。
+
+不要复活已经标记：
+
+    DEAD
+    FALSE
+    KILLED
+
+的路线。
+
+==================================================
+2. MAIN PROBLEM
+==================================================
+
+研究：
+
+G 为 finite loopless undirected multigraph。
+
+orientation D 为 k-arc-strong iff：
+
+    d_D^+(X) >= k
+
+for every nonempty proper X。
+
+legal move：
+
+    reverse ONE physical edge
+
+且 intermediate orientation始终 k-arc-strong。
+
+核心问题：
+
+    lambda(G) >= 2k+1,
+    k>=2
+
+是否保证所有 k-arc-strong orientations
+在 legal single-edge flips 下 connected？
+
+已知：
+
+    lambda >= 2k+2
+
+成立。
+
+临界：
+
+    2k+1
+
+仍 OPEN。
+
+==================================================
+3. CURRENT GLOBAL PICTURE
+==================================================
+
+LOCKED：
+
+A. two-extra static normal forms全部 DEAD。
+
+B. three-extra minimal source-free obstruction
+   已经压缩到唯一：
+
+       PURE DIRECTED 3-CYCLE。
+
+up to reroot，只研究 ALL-D：
+
+    Z1,Z2,Z3
+
+pairwise disjoint actual-tight，
+
+    Q=A-(Z1∪Z2∪Z3) != empty，
+
+private edges：
+
+    h1: Z1->Z2
+    h2: Z2->Z3
+    h3: Z3->Z1
+
+且：
+
+    delta_hi(Xm)=0
+
+for every MAIN row Xm。
+
+C. MAIN-neutral fibers已经压缩：
+
+    F1=F2=F3=F。
+
+只有：
+
+    F=R0
+
+或：
+
+    F=X*
+
+for one MAIN row。
+
+D. endpoint / residual arithmetic alone
+   无法杀 pure 3-cycle：
+
+    RRR SAT；
+    RRS SAT；
+    RSS DEAD；
+    SSS DEAD。
+
+并且：
+
+    slack(Q)>=2
+
+sharp；
+
+    mu(Q)>=2
+
+sharp。
+
+E. dynamic CREATED-BLOCKER depth-3：
+
+    H1 DEAD；
+    H2 DEAD；
+
+only：
+
+    SATURATED H3 EQUALITY CORE
+
+survives residually。
+
+F. D1 complete rewind theorem FALSE，
+但最小 true-critical witness full fiber仍 connected。
+
+G. k=2, |A|=5, m=2, LEVEL2 C2：
+
+exact exhaustive：
+    8<=|J|<=13
+
+pair-antichain candidates total：
+    96
+
+beta_bal：
+    2 : 88
+    3 : 8
+    >=4 : 0
+    infinity : 0
+
+endpoint-essential candidates在：
+    |J|=11,12,13
+全部消失。
+
+H. MINCOST dual：
+
+three-row、
+homogeneous chain、
+first corrected D-C five-atom four-row splitter
+全部 DEAD。
+
+==================================================
+4. PRIORITY QUEUE
+==================================================
+
+你必须按下面顺序工作。
+
+完成一个后自动进入下一个。
+
+--------------------------------------------------
+PRIORITY 1
+PURE THREE-EXTRA COMMON-FIBER LIFT
+--------------------------------------------------
+
+这是当前 static 主战场。
+
+CASE A — F=R0：
+
+    h1,h2,h3 all in R0。
+
+MAIN rows只能：
+
+    Q-row:
+        Xm subset Q
+
+or：
+
+    petal-row:
+        Xm subset Zi。
+
+两类都必须 nonempty。
+
+目标：
+
+    PROVE IMPOSSIBLE
+
+或构造：
+
+    TRUE-CRITICAL TERMINAL REALIZATION。
+
+必须同时满足：
+
+    every Zi actual-tight；
+    every MAIN Xm actual-tight；
+    source-free；
+    cross-free；
+    all mu>=1；
+    endpoint q=min{R,S-complement}；
+    no forbidden tight partition/copartition。
+
+优先寻找：
+
+    double-partition counting；
+    R0 capacity surcharge；
+    mandatory internal 3-cycle pressure；
+    q-valley；
+    skew equality contradiction。
+
+CASE B — F=X*：
+
+exact geometry：
+
+    Z1=C⊔P
+
+    X*=P⊔Z2⊔Z3⊔Q
+
+    C=A-X*
+
+all other MAIN rows + R0 inside C。
+
+private cycle inside X*：
+
+    P->Z2->Z3->P。
+
+目标同上。
+
+若 symbolic proof卡住：
+
+    k=2 exact SAT / exhaustive search。
+
+如果找到 terminal realization：
+
+继续检查：
+
+    source-free closure；
+    persistence；
+    full legal-flip fiber。
+
+不要停。
+
+--------------------------------------------------
+PRIORITY 2
+ENDPOINT-ESSENTIAL SUPPORT GAP
+--------------------------------------------------
+
+固定：
+
+    k=2
+    |A|=5
+    m=2
+    LEVEL2 C2
+    n_uv<=2
+
+尝试证明：
+
+    endpoint-essential LEVEL2 C2
+    =>
+    |J|<=10。
+
+利用：
+
+    R tight certificate family；
+    Rbar tight certificate family；
+    cross-free / laminarization；
+    |A|=5；
+    complement symmetry；
+    double-copy type constraints；
+    C2 reserved endpoint certificate。
+
+如果能证明：
+
+    |J|<=10，
+
+立即与 exhaustive data结合得到：
+
+    beta_bal<=3
+
+for entire candidate universe，
+
+因此：
+
+    no minimum disconnected C2 witness
+    in this k=2,|A|=5 universe。
+
+如果 symbolic proof失败：
+
+不要立即全枚举巨大 |J|。
+
+先寻找：
+
+    minimum structural architecture
+    allowing endpoint-essential comeback
+    at |J|>=14。
+
+然后 targeted search。
+
+--------------------------------------------------
+PRIORITY 3
+SATURATED H3 TERMINALIZATION
+--------------------------------------------------
+
+H3：
+
+    Z1=A0∪C0
+    Z2=B0∪C0
+
+    f:B0->A0
+    h:D0->C0
+    g:C0->D0
+
+必须：
+
+    m_H(A0,B0)=1
+    theta=0
+
+after f,h：
+
+    s(I)=s(U)=1
+
+where：
+
+    I=C0
+    U=A_tot-D0。
+
+clean zero-eta placement：
+
+    p,r in D0∩P
+    q in C0
+    d in D0-P
+
+TYPE-II：
+
+    p->q->r。
+
+目标：
+
+    TERMINALLY IMPOSSIBLE
+
+或：
+
+    TRUE-CRITICAL TERMINAL GADGET。
+
+优先 k=2。
+
+如果 gadget存在：
+
+    enumerate full fiber；
+    determine connected/disconnected；
+    find shortest escape if connected。
+
+--------------------------------------------------
+PRIORITY 4
+D1 COMPLETE-REWIND STARVATION
+--------------------------------------------------
+
+已知：
+
+    complete rewind
+    \bar k,\bar h,l
+
+不 universal。
+
+最小 counterexample：
+
+    k=2
+    4 atoms
+    8 internal edges
+
+但 full fiber connected。
+
+three-blocker rotation：
+
+D0:
+    Y,W tight
+    Z slack1
+
+D^h:
+    W,Z tight
+    Y slack1
+
+D*:
+    Y,Z tight
+    W slack1
+
+with：
+
+    Z proper subset W
+    Y disjoint Z
+    Y co-covers W。
+
+研究：
+
+    after complete rewind,
+    W blocks l,
+
+是否所有 W-service edges
+可以同时 illegal。
+
+即：
+
+    COMPLETE-REWIND STARVATION。
+
+若 impossible：
+
+证明：
+
+    rewind + one buffer + l
+
+universal。
+
+若 possible：
+
+build smallest true-critical witness
+并 full-fiber BFS。
+
+--------------------------------------------------
+PRIORITY 5
+MINCOST TRANSVERSE DUAL
+--------------------------------------------------
+
+当前 D-C first splitter DEAD。
+
+下一步研究：
+
+    D-D DISJOINT transverse atom。
+
+如果死：
+
+继续：
+
+    C-C CO-COVER。
+
+目标：
+
+    either prove CLEAN normalization
+
+或找到：
+
+    exact Debt=2
+    support-minimal witness。
+
+先做 optimistic LP upper bound：
+
+    only X reference slack；
+    optional edges absent；
+    mandatory hinges minimal。
+
+若 optimistic Debt<=1：
+
+直接 kill branch。
+
+--------------------------------------------------
+PRIORITY 6
+GENERALIZE STATIC EXTRA-CYCLE THEORY
+--------------------------------------------------
+
+只有 Priority 1 完成后才做。
+
+如果 pure 3-cycle DEAD：
+
+尝试证明 induction：
+
+    any minimal source-free t-extra closure
+    contains a smaller extra core
+
+or：
+
+    pure directed t-cycle。
+
+分类 t>=4。
+
+目标寻找：
+
+    general homogeneous extra-cycle theorem。
+
+如果 pure 3-cycle REALIZABLE：
+
+研究它是否推广成：
+
+    pure t-cycle family。
+
+但必须区分：
+
+    terminal-realizable
+
+和：
+
+    component-separating。
+
+--------------------------------------------------
+PRIORITY 7
+COMPUTATIONAL FALSIFICATION
+--------------------------------------------------
+
+如果前面证明路线卡住，
+持续做 computation。
+
+优先：
+
+1. k=2, |A|=5 candidate search；
+2. |A|=6 targeted true-critical systems；
+3. balanced-completion width；
+4. minimum disconnected descendant；
+5. terminal H3；
+6. pure three-extra cycle lift。
+
+不要做无目的随机搜索。
+
+每次搜索必须有明确 falsification target。
+
+==================================================
+5. RESEARCH LOOP
+==================================================
+
+持续执行：
+
+    SELECT highest priority unresolved target
+
+    -> derive symbolic constraints
+
+    -> attempt proof
+
+    -> attempt counterexample
+
+    -> if finite:
+           exact enumerate
+
+    -> audit result
+
+    -> classify:
+           PROVED
+           FALSE
+           DEAD
+           COMPUTATIONAL
+           OPEN
+
+    -> update project files
+
+    -> move immediately to next target
+
+直到 session 被外部停止。
+
+==================================================
+6. FILE OUTPUT
+==================================================
+
+整个运行过程中持续维护：
+
+1.
+    research_live_log.md
+
+记录：
+    时间顺序；
+    尝试；
+    failed routes；
+    equations；
+    witness；
+    computation checksum。
+
+2.
+    research_new_results.md
+
+只记录：
+    本次 session 新产生的
+    theorem / counterexample /
+    exact computation /
+    serious conjecture。
+
+3.
+    scripts/
+
+保存所有搜索代码。
+
+4.
+    data/
+
+保存重要 machine-readable output。
+
+5.
+    如果得到足够可靠的新结果，
+    更新：
+
+    graph_orientation_reconfiguration_progress_2026-10-02.md
+
+但：
+
+    OLD CONTENT SHOULD BE PRESERVED。
+
+不要大规模删除历史。
+
+用：
+
+    NEW CURRENT UPDATE
+
+放在文件前部，
+旧东西保留并标 historical。
+
+==================================================
+7. CHECKPOINT POLICY
+==================================================
+
+至少每完成一个 substantive branch：
+
+    save files immediately。
+
+如果程序预计运行超过20分钟：
+
+    first save script；
+
+    then launch computation。
+
+若计算中断，
+确保已有 intermediate output。
+
+不要把所有结果只留在最终回复里。
+
+==================================================
+8. PROOF DISCIPLINE
+==================================================
+
+严格区分：
+
+    symbolic theorem；
+    exact finite exhaustive result；
+    explicit witness；
+    heuristic observation；
+    conjecture。
+
+不要把：
+
+    “搜索没找到”
+
+写成 theorem。
+
+不要把：
+
+    terminal realization
+
+写成：
+
+    disconnected fiber。
+
+不要把：
+
+    local obstruction
+
+写成：
+
+    persistent component barrier。
+
+所有重要 lemma
+写 assumptions 和 conclusion。
+
+==================================================
+9. ANTI-STOP INSTRUCTION
+==================================================
+
+特别重要：
+
+如果你觉得：
+
+    “已经取得不错的进展，可以向用户汇报”
+
+这不是停止理由。
+
+把进展写入 checkpoint，
+然后继续下一个研究任务。
+
+如果一个 branch solved，
+不要等待反馈。
+
+自动继续。
+
+如果一个 branch OPEN，
+切换到另外一个独立 frontier，
+之后再回来。
+
+只有在：
+
+    available Codex execution is forcibly terminated
+
+或：
+
+    every priority above is genuinely exhausted
+
+时才结束。
+
+==================================================
+10. FINAL RESPONSE
+==================================================
+
+如果 session最终被允许正常结束，
+最终回复只需要给：
+
+1. 本次运行时间内完成了什么；
+2. 新 theorem / counterexample；
+3. exact computations；
+4. 哪些路线 DEAD；
+5. 当前最重要 remaining OPEN；
+6. 修改/新增了哪些文件。
+
+现在开始。
+
+第一步：
+完整读取主 progress 文件，
+建立 internal dependency map，
+然后立刻进入 PRIORITY 1。
+
+不要先给我计划摘要。
+直接工作。

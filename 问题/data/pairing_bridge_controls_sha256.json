@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "verify_pairing_bridge_controls.py": "436f5db1467ca0cfdc37425bcdbab269b6569d5d2fe84eadb0130fa0a0b1609c",
+    "pairing_bridge_controls_raw.json": "f6f541a3a2102591c9bd4374ec043fc2623ed0dfe03512e94a41528255857cde"
+  }
+}

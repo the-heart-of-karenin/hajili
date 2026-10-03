@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "verify_first_asynchrony_triangle.py": "8e3db34da4719e85577aaa0fcc1834475ffdacf2c4529efc99e2f202d12e58dd",
+    "first_asynchrony_triangle_raw.json": "c933346e920dafd027b9660baf10ad65761c5aefe2e46be58460720b426639fa"
+  }
+}

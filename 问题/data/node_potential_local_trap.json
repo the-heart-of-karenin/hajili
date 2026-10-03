@@ -1,0 +1,110 @@
+{
+  "vertices": [
+    "w",
+    "w1",
+    "y",
+    "y1",
+    "c",
+    "root"
+  ],
+  "tight_full_shores": [
+    [
+      "w"
+    ],
+    [
+      "w1"
+    ],
+    [
+      "w",
+      "w1"
+    ],
+    [
+      "y"
+    ],
+    [
+      "w",
+      "y"
+    ],
+    [
+      "w",
+      "w1",
+      "y"
+    ],
+    [
+      "y1"
+    ],
+    [
+      "y",
+      "y1"
+    ],
+    [
+      "w",
+      "y",
+      "y1"
+    ],
+    [
+      "w",
+      "w1",
+      "y",
+      "y1"
+    ],
+    [
+      "w",
+      "w1",
+      "y",
+      "y1",
+      "c"
+    ],
+    [
+      "w",
+      "y",
+      "root"
+    ],
+    [
+      "w",
+      "w1",
+      "y",
+      "root"
+    ],
+    [
+      "w",
+      "y",
+      "y1",
+      "root"
+    ],
+    [
+      "w",
+      "w1",
+      "y",
+      "y1",
+      "root"
+    ]
+  ],
+  "legal_internal_copies": [
+    {
+      "id": "J_c_w1_0",
+      "potential_change": -1
+    },
+    {
+      "id": "J_c_w1_1",
+      "potential_change": -1
+    },
+    {
+      "id": "J_c_y1_0",
+      "potential_change": -1
+    },
+    {
+      "id": "J_c_y1_1",
+      "potential_change": -1
+    }
+  ],
+  "omega": {
+    "w": 2,
+    "y": 3,
+    "w1": 0,
+    "y1": 0,
+    "c": 1,
+    "root": 0
+  },
+  "min_mu": 1
+}

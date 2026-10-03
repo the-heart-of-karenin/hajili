@@ -1,0 +1,208 @@
+{
+  "status": "research ongoing; general 2k+1 connectivity OPEN; all-internal-mu>=2 fiber PROVED in current notes",
+  "report": "新研究结果汇总_2026-10-03.md",
+  "report_date": "2026-10-03",
+  "snapshot_created_local": "2026-10-03T00:27:04",
+  "source_download_sha256": "d3443d0f143c475d0b98a6267d60eb468a95d18ab3fbad9e5ac77f84ac96ceb6",
+  "verification_rerun": [
+    "guard_closure_verify",
+    "relative_heavy_phase",
+    "dual_guard_gap",
+    "terminal_unbounded_debt_24_cases"
+  ],
+  "verification_result": "PASS",
+  "verified_hash_records": [
+    "scripts\\verify_relative_heavy_phase.py",
+    "data\\relative_heavy_phase_certificate.json",
+    "scripts\\verify_dual_guard_gap.py",
+    "scripts\\verify_terminal_unbounded_debt.py",
+    "data\\dual_guard_gap_certificate.json",
+    "scripts\\verify_terminal_unbounded_debt.py",
+    "data\\terminal_unbounded_debt_certificate.json",
+    "data\\terminal_unbounded_debt_summary.json",
+    "data\\guard_closure_verify.json",
+    "scripts\\guard_closure_verify.py"
+  ],
+  "files": {
+    "data\\dual_guard_gap_certificate.json": {
+      "bytes": 6666,
+      "sha256": "843bfb5de6d225e066ce5baf3cf9351f997967e8f807815c040deb905c79177c"
+    },
+    "data\\dual_guard_gap_sha256.json": {
+      "bytes": 342,
+      "sha256": "9bc98320994703c3ea34672c7bc310a17ca9beee3cd9ca2bb4ae5d5cf3c61bfd"
+    },
+    "data\\environment_probe_cpp.json": {
+      "bytes": 206,
+      "sha256": "6e8c083a5b31743131da324203660c5357f9fd0e85a2ed30f35424794aea5804"
+    },
+    "data\\environment_probe_python.json": {
+      "bytes": 1707,
+      "sha256": "80e508b04d6a379ab4beb282562a87e651d1ca0d5b657efb942313ed3ead105b"
+    },
+    "data\\environment_probe_sha256.json": {
+      "bytes": 528,
+      "sha256": "4eb09709927393614f900a291d5b23ebc8dd72ead6e873315c2dde77e0b441cc"
+    },
+    "data\\guard_closure_verify.json": {
+      "bytes": 498,
+      "sha256": "c1040dc7f575b45759028087f8d8b76514becc6786c70d642cc326974b102607"
+    },
+    "data\\guard_closure_verify.sha256": {
+      "bytes": 93,
+      "sha256": "76dc9ef36d1a35f72118e75118f59d656622bca0487de31c70f63ccafdc0b627"
+    },
+    "data\\guard_scc_geometry_probe.json": {
+      "bytes": 588,
+      "sha256": "50f1a36c0392a3c73e6d6d20e51fc94513db08deb981434f6fc150c1cc0bc78d"
+    },
+    "data\\node_potential_local_trap.json": {
+      "bytes": 1284,
+      "sha256": "3e5dc36861ed362cc443682e2094710079bd046554591bae105e3a3dc02a5baf"
+    },
+    "data\\relative_heavy_phase_certificate.json": {
+      "bytes": 33163,
+      "sha256": "2abd9c17ef16a91c7ba30e43eb82e7e733dee62014b7edd220f76a376e55eda3"
+    },
+    "data\\relative_heavy_phase_sha256.json": {
+      "bytes": 178,
+      "sha256": "74985f0724a4dd5273dc0881fc2a174205cac68cb3e7526bfbc81cdea64013df"
+    },
+    "data\\terminal_antipodal_debt2_certificate.json": {
+      "bytes": 215883,
+      "sha256": "cfcde6e252fbbe77057128a8434979d726c7f6237fd9b7c906be46066a5c7f0f"
+    },
+    "data\\terminal_antipodal_debt2_sha256.json": {
+      "bytes": 279,
+      "sha256": "580860f2198115805d1988ef89d4ad6de9ea874d9b1a0b588c89222f3b249832"
+    },
+    "data\\terminal_unbounded_debt_certificate.json": {
+      "bytes": 601326,
+      "sha256": "fbce0b8008cb0b1a36ae229b8b37873a16f51ff0d8b388e6c9be37e506366328"
+    },
+    "data\\terminal_unbounded_debt_sha256.json": {
+      "bytes": 390,
+      "sha256": "ce313e90395dc0835393367c99058b7299381913793eda002e50156a86e6f596"
+    },
+    "data\\terminal_unbounded_debt_summary.json": {
+      "bytes": 18787,
+      "sha256": "9439ff743bdff9ffe3690dd3f663e483ec05ac0c23b81e1c0138b6442cd9d823"
+    },
+    "graph_orientation_reconfiguration_progress_2026-10-02_revised.md": {
+      "bytes": 304715,
+      "sha256": "b3a02d3a4bdcdd21ac706344debec85d5ed62cc6f86fa788c4eae5b6e5d480ff"
+    },
+    "research_atom_budget.md": {
+      "bytes": 4516,
+      "sha256": "7af0d6ec7b1c3fb9c7cc43cd5ee0bb69925b845b88591457c7f8a29af7117be4"
+    },
+    "research_case_r0.md": {
+      "bytes": 8532,
+      "sha256": "2d82dc79bb2a9b69bd9adf758604de66c7464fbed7df29ed9b45acc4b7e9dc5d"
+    },
+    "research_case_xstar.md": {
+      "bytes": 6746,
+      "sha256": "0ef1327f2bc46e403ea468665edd160afc2434dc1d3c085e10d8af3fb4914ff4"
+    },
+    "research_completion_dag.md": {
+      "bytes": 3511,
+      "sha256": "9e323c7a7bf7df534b70c69a9e68aa66214bafb0ec1d533305f846054397cc06"
+    },
+    "research_critical_contraction.md": {
+      "bytes": 10516,
+      "sha256": "e61575a487f3070bd98692a95234ab0c7957e5e93903645dfc75903c3fd4d6d9"
+    },
+    "research_crossfree_source_theorem.md": {
+      "bytes": 8404,
+      "sha256": "f844a62e63e1f4b58e7c3d49f7ca46c7fd3ab441c69f49130eaef2d6e984552e"
+    },
+    "research_dependency_map.md": {
+      "bytes": 6609,
+      "sha256": "c24095a37d216a9df4e70871a2211f789db07a5eb22c1a9a75d7df0241b5c13e"
+    },
+    "research_dual_guard_gap.md": {
+      "bytes": 6019,
+      "sha256": "12280ee6c37255e601507dcb31e987bea4bb9bdf330f7e85972b1d87436ed4ee"
+    },
+    "research_dynamic_bridge.md": {
+      "bytes": 8801,
+      "sha256": "ca2316f631727c906dad4e84b32f57ede1171f5a1e99d167d63be373f52c44b4"
+    },
+    "research_foundation_audit.md": {
+      "bytes": 9253,
+      "sha256": "a97ce3861125d1558fbea216244acf31bc70f495da6c4a307af9014db357dade"
+    },
+    "research_global_scope.md": {
+      "bytes": 57924,
+      "sha256": "51459b9f9d2cd63cc4ee75b34b53b2ad885a63f63699ada1aa79d94f1422b42f"
+    },
+    "research_guard_geometry.md": {
+      "bytes": 32505,
+      "sha256": "c1c58fcdcd57593b24cb420e9c72b30510b4dee8f553b9ba28347daa1bf8d1da"
+    },
+    "research_live_log.md": {
+      "bytes": 10522,
+      "sha256": "8b0fe5663e6a616f4da38361f26bba0383989559b453e38d661f0a1fcd20f134"
+    },
+    "research_new_results.md": {
+      "bytes": 11912,
+      "sha256": "99e7f860ee1b6ff2af63bb3821d7222a8ecd074f92a986e2f53a59681d397886"
+    },
+    "research_odd_degree_control.md": {
+      "bytes": 5558,
+      "sha256": "89fcd2adc7cd1d194a9746d82fa604ba0b2a6fb08d406e33fca6ff0929c080ff"
+    },
+    "research_relative_augmentation.md": {
+      "bytes": 8463,
+      "sha256": "38cf143a1f22580937c7d264143fe7d26c5d5a9ca033748f757cd89fa58198ea"
+    },
+    "research_relative_augmentation_lp.md": {
+      "bytes": 6023,
+      "sha256": "1b1eeebcb2ca59c0e20ab40e04e300c074db27cdae527a218c55b305eac3422c"
+    },
+    "research_relative_reachability_audit.md": {
+      "bytes": 23447,
+      "sha256": "d059e6f6f36f74b150bb26c0c5f98de3256092fa54adf0531b15af9a7cf53402"
+    },
+    "research_relative_reachability_candidate.md": {
+      "bytes": 13181,
+      "sha256": "aef65e21976da5b34a3d158491b213e85051de98889504154a7fb48b5e065c1e"
+    },
+    "research_terminal_debt.md": {
+      "bytes": 41563,
+      "sha256": "b134cbcc222565be1dde372d6dd670f9e5de9463c1c5b8f05b0d5cef7adbd070"
+    },
+    "scripts\\environment_probe.py": {
+      "bytes": 3814,
+      "sha256": "37ef5581e219c007024b9e7cc7e44b70eb687fa06930e25b88900ff1060cdf59"
+    },
+    "scripts\\guard_closure_verify.py": {
+      "bytes": 4190,
+      "sha256": "3d22f03ee293e2b86f5bcc442d5af464ea42c24a5c4a271c8145babce94666ba"
+    },
+    "scripts\\guard_scc_geometry_probe.py": {
+      "bytes": 3234,
+      "sha256": "5f21379e22a68bb04868a28eec0a02f238d3ef475e691729c951bf42bfcee6ff"
+    },
+    "scripts\\verify_dual_guard_gap.py": {
+      "bytes": 3457,
+      "sha256": "2f7697df07ea5b2fec305af06821b87ee45818536b9047fc9585c23c5b3cf31f"
+    },
+    "scripts\\verify_relative_heavy_phase.py": {
+      "bytes": 5118,
+      "sha256": "11851f2fec00076dd5b6d12e04b9f62c07f3aab557e670628d6e4a6bfca7a672"
+    },
+    "scripts\\verify_terminal_antipodal_debt2.py": {
+      "bytes": 8650,
+      "sha256": "5de4167e88de87359ab50b5086f48a5b3881bab1819e125325c82342566a2426"
+    },
+    "scripts\\verify_terminal_unbounded_debt.py": {
+      "bytes": 9697,
+      "sha256": "028ed28c2020cd1a28889d74ea2704cecb00fc476b69f615a669900f5d7e70f0"
+    },
+    "新研究结果汇总_2026-10-03.md": {
+      "bytes": 34510,
+      "sha256": "c1b3e099967e36a56490814cdc45d5725d925bc897b84d062def1fbb0bbb30c8"
+    }
+  }
+}

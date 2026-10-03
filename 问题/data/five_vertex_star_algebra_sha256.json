@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "verify_five_vertex_star_algebra.py": "ab96fc098e06c1332ff3c03d4ebc28080357ad494e47550d8f61371067cd4d34",
+    "five_vertex_star_algebra_raw.json": "05fd70937c356f227c6cdf0f149c59e03d63fd49030ba764e87a0dc3deecb0b4"
+  }
+}

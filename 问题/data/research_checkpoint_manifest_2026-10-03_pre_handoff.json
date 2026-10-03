@@ -1,0 +1,322 @@
+{
+  "status": "FINAL C checkpoint; original MAIN OPEN; sole audited main-chain gap RSM; no ambient counterexample",
+  "report": "原定理综合研究与唯一剩余接口_2026-10-03.md",
+  "report_date": "2026-10-03",
+  "snapshot_created_local": "2026-10-03T02:09:09",
+  "source_download_sha256": "d3443d0f143c475d0b98a6267d60eb468a95d18ab3fbad9e5ac77f84ac96ceb6",
+  "inherited_verification_rerun": [
+    "guard_closure_verify",
+    "relative_heavy_phase",
+    "dual_guard_gap",
+    "terminal_unbounded_debt_24_cases"
+  ],
+  "current_sprint_verifications": [
+    "atom_scope_gap",
+    "five_vertex_root_models",
+    "synthesis_controls"
+  ],
+  "verification_result": "PASS; focused certificates and two prescribed 13-edge models, no extrapolation",
+  "verified_hash_records": [
+    "data\\atom_scope_gap_certificate.json",
+    "data\\dual_guard_gap_certificate.json",
+    "data\\environment_probe.exe",
+    "data\\environment_probe_cpp.json",
+    "data\\environment_probe_python.json",
+    "data\\five_vertex_root_models_certificate.json",
+    "data\\relative_heavy_phase_certificate.json",
+    "data\\synthesis_controls_certificate.json",
+    "data\\terminal_antipodal_debt2_certificate.json",
+    "data\\terminal_unbounded_debt_certificate.json",
+    "data\\terminal_unbounded_debt_summary.json",
+    "scripts\\environment_probe.cpp",
+    "scripts\\environment_probe.py",
+    "scripts\\verify_atom_scope_gap.py",
+    "scripts\\verify_dual_guard_gap.py",
+    "scripts\\verify_five_vertex_root_models.py",
+    "scripts\\verify_relative_heavy_phase.py",
+    "scripts\\verify_synthesis_controls.py",
+    "scripts\\verify_terminal_antipodal_debt2.py",
+    "scripts\\verify_terminal_unbounded_debt.py"
+  ],
+  "local_report_links": "ALL EXIST",
+  "theorem_status": {
+    "main": "OPEN",
+    "rsm": "OPEN",
+    "B_plus": "PROVED",
+    "nonboundary_lift": "PROVED",
+    "small_fiber_up_to_three": "PROVED",
+    "global_up_to_four_vertices": "PROVED",
+    "five_vertices_minimum_edge_layer": "PROVED",
+    "noncritical_deletion_anchor": "PROVED"
+  },
+  "files": {
+    "data\\atom_scope_gap_certificate.json": {
+      "bytes": 14920,
+      "sha256": "e32101bb874a146ade1f7938dbf794225b079784e0c6de2da601ad77c98aea0a"
+    },
+    "data\\atom_scope_gap_sha256.json": {
+      "bytes": 225,
+      "sha256": "334cd71e39891b85526e1524d64a8dff787d845ebd5a880a6d931f7eefb79e7b"
+    },
+    "data\\dual_guard_gap_certificate.json": {
+      "bytes": 6666,
+      "sha256": "843bfb5de6d225e066ce5baf3cf9351f997967e8f807815c040deb905c79177c"
+    },
+    "data\\dual_guard_gap_sha256.json": {
+      "bytes": 342,
+      "sha256": "9bc98320994703c3ea34672c7bc310a17ca9beee3cd9ca2bb4ae5d5cf3c61bfd"
+    },
+    "data\\environment_probe.exe": {
+      "bytes": 69479,
+      "sha256": "aad524585f96dde43f823d71c69e0740dcd2c37f6a56c55a00f3f134899893ef"
+    },
+    "data\\environment_probe_cpp.json": {
+      "bytes": 206,
+      "sha256": "6e8c083a5b31743131da324203660c5357f9fd0e85a2ed30f35424794aea5804"
+    },
+    "data\\environment_probe_python.json": {
+      "bytes": 1707,
+      "sha256": "80e508b04d6a379ab4beb282562a87e651d1ca0d5b657efb942313ed3ead105b"
+    },
+    "data\\environment_probe_sha256.json": {
+      "bytes": 528,
+      "sha256": "4eb09709927393614f900a291d5b23ebc8dd72ead6e873315c2dde77e0b441cc"
+    },
+    "data\\five_vertex_root_models_certificate.json": {
+      "bytes": 53047,
+      "sha256": "cd61264399cbbdd456d9992ccde08175476af0fa004b06044a099572e1096149"
+    },
+    "data\\five_vertex_root_models_sha256.json": {
+      "bytes": 243,
+      "sha256": "be348ac80c4a076f8d078694bbca1c2b8e829dfed6638b8119c6da6285d25bfc"
+    },
+    "data\\guard_closure_verify.json": {
+      "bytes": 498,
+      "sha256": "c1040dc7f575b45759028087f8d8b76514becc6786c70d642cc326974b102607"
+    },
+    "data\\guard_closure_verify.sha256": {
+      "bytes": 93,
+      "sha256": "76dc9ef36d1a35f72118e75118f59d656622bca0487de31c70f63ccafdc0b627"
+    },
+    "data\\guard_scc_geometry_probe.json": {
+      "bytes": 588,
+      "sha256": "50f1a36c0392a3c73e6d6d20e51fc94513db08deb981434f6fc150c1cc0bc78d"
+    },
+    "data\\node_potential_local_trap.json": {
+      "bytes": 1284,
+      "sha256": "3e5dc36861ed362cc443682e2094710079bd046554591bae105e3a3dc02a5baf"
+    },
+    "data\\relative_heavy_phase_certificate.json": {
+      "bytes": 33163,
+      "sha256": "2abd9c17ef16a91c7ba30e43eb82e7e733dee62014b7edd220f76a376e55eda3"
+    },
+    "data\\relative_heavy_phase_sha256.json": {
+      "bytes": 178,
+      "sha256": "74985f0724a4dd5273dc0881fc2a174205cac68cb3e7526bfbc81cdea64013df"
+    },
+    "data\\research_checkpoint_manifest_2026-10-03_002704.json": {
+      "bytes": 8225,
+      "sha256": "3af6dc0bc369f92a9c6e10636df51fcdea107b8ce785a56544c120e5a507e962"
+    },
+    "data\\synthesis_controls_certificate.json": {
+      "bytes": 21313,
+      "sha256": "e1cd19e7183544bc5c7e88c63d57d03a0108bba70e4fdf1c51541564bd80a41a"
+    },
+    "data\\synthesis_controls_sha256.json": {
+      "bytes": 233,
+      "sha256": "f4aff27ed5a5d39cfaed234d90c5f42bd44731c2efc5d64ac12d7ee1f915d56d"
+    },
+    "data\\terminal_antipodal_debt2_certificate.json": {
+      "bytes": 215883,
+      "sha256": "cfcde6e252fbbe77057128a8434979d726c7f6237fd9b7c906be46066a5c7f0f"
+    },
+    "data\\terminal_antipodal_debt2_sha256.json": {
+      "bytes": 279,
+      "sha256": "580860f2198115805d1988ef89d4ad6de9ea874d9b1a0b588c89222f3b249832"
+    },
+    "data\\terminal_unbounded_debt_certificate.json": {
+      "bytes": 601326,
+      "sha256": "fbce0b8008cb0b1a36ae229b8b37873a16f51ff0d8b388e6c9be37e506366328"
+    },
+    "data\\terminal_unbounded_debt_sha256.json": {
+      "bytes": 390,
+      "sha256": "ce313e90395dc0835393367c99058b7299381913793eda002e50156a86e6f596"
+    },
+    "data\\terminal_unbounded_debt_summary.json": {
+      "bytes": 18787,
+      "sha256": "9439ff743bdff9ffe3690dd3f663e483ec05ac0c23b81e1c0138b6442cd9d823"
+    },
+    "graph_orientation_reconfiguration_progress_2026-10-02.md": {
+      "bytes": 289292,
+      "sha256": "2daff47c46a99462fa3c3118fdcfd928a189084db0fc0fab12c279d5dc118408"
+    },
+    "graph_orientation_reconfiguration_progress_2026-10-02_revised.md": {
+      "bytes": 304715,
+      "sha256": "b3a02d3a4bdcdd21ac706344debec85d5ed62cc6f86fa788c4eae5b6e5d480ff"
+    },
+    "research_atom_budget.md": {
+      "bytes": 4516,
+      "sha256": "7af0d6ec7b1c3fb9c7cc43cd5ee0bb69925b845b88591457c7f8a29af7117be4"
+    },
+    "research_atom_product_audit.md": {
+      "bytes": 7377,
+      "sha256": "373b17f520545e2950a82406a6d04e964ca6a7ba211c05eab4b568c510e5ee69"
+    },
+    "research_boundary_lift_audit.md": {
+      "bytes": 12284,
+      "sha256": "81a2d61f3397c42f8a649dbaee7438b8fa2f624f9f1c7f71b77eff682c1df840"
+    },
+    "research_case_r0.md": {
+      "bytes": 8532,
+      "sha256": "2d82dc79bb2a9b69bd9adf758604de66c7464fbed7df29ed9b45acc4b7e9dc5d"
+    },
+    "research_case_xstar.md": {
+      "bytes": 6746,
+      "sha256": "0ef1327f2bc46e403ea468665edd160afc2434dc1d3c085e10d8af3fb4914ff4"
+    },
+    "research_completion_dag.md": {
+      "bytes": 3511,
+      "sha256": "9e323c7a7bf7df534b70c69a9e68aa66214bafb0ec1d533305f846054397cc06"
+    },
+    "research_critical_contraction.md": {
+      "bytes": 10516,
+      "sha256": "e61575a487f3070bd98692a95234ab0c7957e5e93903645dfc75903c3fd4d6d9"
+    },
+    "research_crossfree_source_theorem.md": {
+      "bytes": 8404,
+      "sha256": "f844a62e63e1f4b58e7c3d49f7ca46c7fd3ab441c69f49130eaef2d6e984552e"
+    },
+    "research_deletion_component_anchor.md": {
+      "bytes": 7049,
+      "sha256": "3bf96ae5596e318f761728e56d76562b696690ebab69eef6f7c0a9405dd18581"
+    },
+    "research_dependency_map.md": {
+      "bytes": 8578,
+      "sha256": "e4da778d4eeaf7ecf3512c7b72444f5b35e92785e4b28cfe87590c136ef4ae50"
+    },
+    "research_dual_guard_gap.md": {
+      "bytes": 6019,
+      "sha256": "12280ee6c37255e601507dcb31e987bea4bb9bdf330f7e85972b1d87436ed4ee"
+    },
+    "research_dynamic_bridge.md": {
+      "bytes": 8801,
+      "sha256": "ca2316f631727c906dad4e84b32f57ede1171f5a1e99d167d63be373f52c44b4"
+    },
+    "research_five_vertex_minimum_edges.md": {
+      "bytes": 5970,
+      "sha256": "14760d3e9b6b1c4f73d6037f0f43d8bd303e2ee5d7aae5af3543eb3d1c1fd490"
+    },
+    "research_foundation_audit.md": {
+      "bytes": 9253,
+      "sha256": "a97ce3861125d1558fbea216244acf31bc70f495da6c4a307af9014db357dade"
+    },
+    "research_global_scope.md": {
+      "bytes": 57924,
+      "sha256": "51459b9f9d2cd63cc4ee75b34b53b2ad885a63f63699ada1aa79d94f1422b42f"
+    },
+    "research_global_source_theorem.md": {
+      "bytes": 3156,
+      "sha256": "fdc64f70323e92bf2ab4293666dd6466132ead7fbc679680efb7d10304621b05"
+    },
+    "research_guard_geometry.md": {
+      "bytes": 32505,
+      "sha256": "c1c58fcdcd57593b24cb420e9c72b30510b4dee8f553b9ba28347daa1bf8d1da"
+    },
+    "research_live_log.md": {
+      "bytes": 12268,
+      "sha256": "083a0ca288ff7acdf09854f18274e131f29449693c19e3aa40e281b7d31b8ac2"
+    },
+    "research_main_theorem_synthesis.md": {
+      "bytes": 7767,
+      "sha256": "ca36a2acd6f5dfc02e05ba4182709c25f23bb985c8bd0258b49662c13eab2de7"
+    },
+    "research_new_results.md": {
+      "bytes": 13521,
+      "sha256": "1a102a7e5bb2900b10350622e94fdccb338880d2570b4cd6399c469d0d26037f"
+    },
+    "research_odd_degree_control.md": {
+      "bytes": 5558,
+      "sha256": "89fcd2adc7cd1d194a9746d82fa604ba0b2a6fb08d406e33fca6ff0929c080ff"
+    },
+    "research_pairing_lift_route.md": {
+      "bytes": 5858,
+      "sha256": "571504f90eb8ceb47807dbc66f913dc5eeade54dfd788d89bb9d8b7d783a9b69"
+    },
+    "research_relative_augmentation.md": {
+      "bytes": 8463,
+      "sha256": "38cf143a1f22580937c7d264143fe7d26c5d5a9ca033748f757cd89fa58198ea"
+    },
+    "research_relative_augmentation_lp.md": {
+      "bytes": 6023,
+      "sha256": "1b1eeebcb2ca59c0e20ab40e04e300c074db27cdae527a218c55b305eac3422c"
+    },
+    "research_relative_reachability_audit.md": {
+      "bytes": 23447,
+      "sha256": "d059e6f6f36f74b150bb26c0c5f98de3256092fa54adf0531b15af9a7cf53402"
+    },
+    "research_relative_reachability_candidate.md": {
+      "bytes": 13181,
+      "sha256": "aef65e21976da5b34a3d158491b213e85051de98889504154a7fb48b5e065c1e"
+    },
+    "research_small_fiber_theorem.md": {
+      "bytes": 5757,
+      "sha256": "efd8e4d092f83561ccfbb890f74e47154a1de5e475ab48c8ae12c802c6e40d66"
+    },
+    "research_terminal_debt.md": {
+      "bytes": 41563,
+      "sha256": "b134cbcc222565be1dde372d6dd670f9e5de9463c1c5b8f05b0d5cef7adbd070"
+    },
+    "scripts\\environment_probe.cpp": {
+      "bytes": 2120,
+      "sha256": "ca12174ad5542d78ad12e40c2d7c6989225a39e273ad0c4c6438cee40e0d2b81"
+    },
+    "scripts\\environment_probe.py": {
+      "bytes": 3814,
+      "sha256": "37ef5581e219c007024b9e7cc7e44b70eb687fa06930e25b88900ff1060cdf59"
+    },
+    "scripts\\guard_closure_verify.py": {
+      "bytes": 4190,
+      "sha256": "3d22f03ee293e2b86f5bcc442d5af464ea42c24a5c4a271c8145babce94666ba"
+    },
+    "scripts\\guard_scc_geometry_probe.py": {
+      "bytes": 3234,
+      "sha256": "5f21379e22a68bb04868a28eec0a02f238d3ef475e691729c951bf42bfcee6ff"
+    },
+    "scripts\\verify_atom_scope_gap.py": {
+      "bytes": 5102,
+      "sha256": "28fb0b57bb99aeb6199ad05d2ef3c337d30404bc82740f9179e03d8706b220ea"
+    },
+    "scripts\\verify_dual_guard_gap.py": {
+      "bytes": 3457,
+      "sha256": "2f7697df07ea5b2fec305af06821b87ee45818536b9047fc9585c23c5b3cf31f"
+    },
+    "scripts\\verify_five_vertex_root_models.py": {
+      "bytes": 5239,
+      "sha256": "2348f0548d7a563814f7d7996db4584043bf89252b8525747365f3a58e6928cc"
+    },
+    "scripts\\verify_relative_heavy_phase.py": {
+      "bytes": 5118,
+      "sha256": "11851f2fec00076dd5b6d12e04b9f62c07f3aab557e670628d6e4a6bfca7a672"
+    },
+    "scripts\\verify_synthesis_controls.py": {
+      "bytes": 5136,
+      "sha256": "217a64e899c9b8f7e172e2005602bc6802a401bbffe1ddbc86bc844f5d25c702"
+    },
+    "scripts\\verify_terminal_antipodal_debt2.py": {
+      "bytes": 8650,
+      "sha256": "5de4167e88de87359ab50b5086f48a5b3881bab1819e125325c82342566a2426"
+    },
+    "scripts\\verify_terminal_unbounded_debt.py": {
+      "bytes": 9697,
+      "sha256": "028ed28c2020cd1a28889d74ea2704cecb00fc476b69f615a669900f5d7e70f0"
+    },
+    "原定理综合研究与唯一剩余接口_2026-10-03.md": {
+      "bytes": 29444,
+      "sha256": "750f2d28e7addabbb6ef7270218cb216ecb768333ccd60d40c023c313106a83e"
+    },
+    "新研究结果汇总_2026-10-03.md": {
+      "bytes": 34510,
+      "sha256": "c1b3e099967e36a56490814cdc45d5725d925bc897b84d062def1fbb0bbb30c8"
+    }
+  }
+}

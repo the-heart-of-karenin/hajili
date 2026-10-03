@@ -1,0 +1,1791 @@
+你现在不再负责一个局部 lemma。
+
+你的唯一主任务是：
+
+################################################################
+#
+# PROVE THE ORIGINAL THEOREM
+#
+################################################################
+
+设 G 是 finite loopless undirected multigraph，
+parallel physical edges保留身份。
+
+对 k>=2，
+
+orientation D 是 k-arc-strong iff：
+
+    d_D^+(X)>=k
+
+for every：
+
+    empty != X proper subset V(G).
+
+一次 legal move：
+
+    reverse ONE physical edge
+
+且翻转后的 orientation仍 k-arc-strong。
+
+证明：
+
+==================================================
+MAIN THEOREM
+==================================================
+
+If
+
+    lambda(G)>=2k+1,
+
+then the legal single-edge flip graph
+
+    Omega_k(G)
+
+of all k-arc-strong orientations of G
+is connected。
+
+==================================================
+
+你现在应当把这个作为
+最终 theorem target。
+
+不要再把主要任务降格成：
+
+    找一个新的局部 normal form；
+
+    多关掉一个 case；
+
+    找一个 bounded-width lemma；
+
+    做更多 finite census；
+
+    再写一个 conjecture。
+
+所有这些只能作为
+证明 MAIN THEOREM 的中间工具。
+
+################################################################
+#
+# WORKING MODE
+#
+################################################################
+
+这是一个 long autonomous research run。
+
+要求：
+
+1.
+    持续推进。
+
+2.
+    不需要等待用户确认
+    才进入下一 lemma / case / computation。
+
+3.
+    每证明一个中间结果，
+    立即问：
+
+        HOW DOES THIS ADVANCE
+        THE MAIN THEOREM?
+
+    然后继续。
+
+4.
+    不要在得到一个漂亮但局部的 theorem 后停止。
+
+5.
+    如果当前路线失败，
+    立刻分析失败原因，
+    从已有结构中切换到另一条路线。
+
+6.
+    可以：
+
+        写证明；
+        写程序；
+        做 SAT/MILP/BFS；
+        搜索最小 counterexample；
+        做 symbolic enumeration；
+        做 polyhedral reformulation；
+        做 uncrossing；
+        重定义 potential；
+        重选 minimum object。
+
+7.
+    计算只作为：
+
+        conjecture formation；
+        finite obstruction killing；
+        certificate discovery；
+        proof sanity check。
+
+    不能把 finite search冒充 arbitrary theorem。
+
+8.
+    不要人为限制思考时间或路线长度。
+
+9.
+    如果一个 proof architecture
+    被反例杀死，
+    明确永久删除，
+    不要之后换个名字复活。
+
+10.
+    每个关键 implication
+    做 scope audit。
+
+特别区分：
+
+    initial nonnegative p；
+
+    signed descendant p_J；
+
+    true terminal q representation；
+
+    arbitrary crossing-supermodular local projection；
+
+    frozen-J restriction；
+
+    ambient physical component。
+
+################################################################
+#
+# SOURCE PRIORITY
+#
+################################################################
+
+先完整读取：
+
+==================================================
+新研究结果汇总_2026-10-03.md
+==================================================
+
+以及其中引用的当前工作文件，
+尤其：
+
+    research_relative_reachability_audit.md
+
+    research_critical_contraction.md
+
+    research_global_scope.md
+
+    research_terminal_debt.md
+
+    research_dual_guard_gap.md
+
+    research_completion_dag.md
+
+    research_crossfree_source_theorem.md
+
+    research_guard_geometry.md
+
+如果旧总档案与上述新结果冲突：
+
+==================================================
+NEWEST PROVED RESULT WINS。
+==================================================
+
+旧档案只用于：
+
+    definitions；
+    provenance；
+    dead-route list；
+    old examples；
+    previous failed conjectures。
+
+################################################################
+#
+# CURRENT LOCKED GLOBAL INPUT
+#
+################################################################
+
+你当前至少可以使用以下
+已经完成的结果。
+
+==================================================
+A. TERMINAL REDUCTION
+==================================================
+
+对 genuine critical shore A：
+
+    |delta_G(A)|=2k+1。
+
+H=G[A]。
+
+固定 external orientation。
+
+定义：
+
+    q(Y)
+    =
+    min{
+      R(Y),
+      S(A-Y)
+    };
+
+    p(Y)=k-q(Y);
+
+    s_D(Y)
+    =
+    d_{D[H]}^+(Y)-p(Y).
+
+以及：
+
+    mu(Y)
+    =
+    |delta_H(Y)|
+      -p(Y)-p(A-Y).
+
+已有 exact identity：
+
+==================================================
+mu(Y)
+=
+min{
+  |delta_G(Y)|,
+  |delta_G(A-Y)|
+}
+-2k。
+==================================================
+
+所以：
+
+    mu(Y)>=1。
+
+且：
+
+==================================================
+mu(Y)=1
+iff
+Y or A-Y
+is itself a global
+(2k+1)-minimum-cut shore。
+==================================================
+
+################################################################
+#
+# B. FULL mu>=2 FIBER CONNECTIVITY
+#
+################################################################
+
+如果对所有：
+
+    empty != X proper subset A
+
+都有：
+
+    mu(X)>=2，
+
+则 fixed-critical-boundary
+complete internal orientation fiber：
+
+==================================================
+IS CONNECTED。
+==================================================
+
+更强：
+
+任意合法 orientation
+可逐 physical edge
+合法到达 strict orientation D*：
+
+    d^+(X)>=k+1；
+
+    d^-(X)>=k+1
+
+for every proper internal X。
+
+已有 explicit word-length bound：
+
+    <= n^2(n-1)^2
+
+for augmentation。
+
+strict orientations之间也 connected。
+
+整个 fiber diameter：
+
+==================================================
+<=
+2 n^2 (n-1)^2 + n m。
+==================================================
+
+这已经是 theorem，
+不要重新证明除非需要提取更强 corollary。
+
+################################################################
+#
+# C. CRITICAL BLOCK CONTRACTION
+#
+################################################################
+
+global minimum cut size：
+
+    2k+1
+
+是 odd。
+
+已有：
+
+==================================================
+GLOBAL MINIMUM-CUT SHORES
+ARE CROSS-FREE。
+==================================================
+
+若 A 是 inclusion-minimal
+global mincut shore
+且：
+
+    |A|>=2，
+
+则每个 proper internal shore
+都有：
+
+    mu>=2。
+
+所以可以：
+
+    strictify inside A；
+
+    contract A；
+
+    lift quotient legal moves；
+
+    re-augment as needed。
+
+因此：
+
+==================================================
+IN A VERTEX-MINIMUM COUNTEREXAMPLE,
+EVERY INCLUSION-MINIMAL
+GLOBAL (2k+1)-MINCUT SHORE
+IS A SINGLETON。
+==================================================
+
+并且当前 critical minimal frontier rows
+也被压到 singleton。
+
+这应被视作
+MAIN THEOREM 当前最强 induction reduction。
+
+################################################################
+#
+# D. mu=1 REMAINING DYNAMICS
+#
+################################################################
+
+对 critical singleton v：
+
+    deg(v)=2k+1。
+
+在任何 legal orientation：
+
+    out(v)=k, in(v)=k+1
+
+or：
+
+    out(v)=k+1, in(v)=k。
+
+所以 critical singleton有两种 polarity：
+
+    OUT-tight；
+
+    IN-tight。
+
+service 它以后：
+
+    OUT -> IN
+
+or：
+
+    IN -> OUT，
+
+但 singleton标签本身
+不会像 mu>=2 block那样消失。
+
+所以旧 frontier potential：
+
+    size / label disappearance
+
+可以出现 zero descent。
+
+这是目前 MAIN THEOREM
+最明确的动态障碍。
+
+################################################################
+#
+# E. CROSS-FREE SOURCE THEOREM
+#
+################################################################
+
+对同一 initial orientation 中：
+
+    nonempty；
+    distinct；
+    cross-free；
+    actual-tight
+
+family F，
+
+若有 n_F nonempty membership atoms，
+
+则 relative strict sources至少：
+
+==================================================
+ceil((n_F-1)/2)。
+==================================================
+
+对 maximal cross-free
+actual-tight family，
+遗漏 blocker可以 uncross进入 family。
+
+所以 relative source可升级到
+globally legal internal source。
+
+特别：
+
+==================================================
+INITIAL COMPLETE CRITICAL FIBER
+HAS NO ISOLATED STATE
+WHEN |A|>=2。
+==================================================
+
+但：
+
+    no isolated state
+    !=
+    connected。
+
+################################################################
+#
+# F. UNBOUNDED TEMPORAL COMPLEXITY
+#
+################################################################
+
+固定 k=2，
+存在任意 L：
+
+    true critical；
+    lambda=2k+1；
+
+with exact：
+
+==================================================
+c*(e)
+=
+max Debt
+=
+balanced / temporal buffer width
+=
+L。
+==================================================
+
+而 endpoints仍有
+explicit legal connecting word。
+
+所以永久禁止：
+
+    constant buffer theorem；
+
+    k-only temporal width；
+
+    terminal-only bounded Debt；
+
+    bounded service depth
+    as global strategy。
+
+正确 theorem必须允许：
+
+==================================================
+ARBITRARILY LONG
+BUT FINITE
+LEGAL SERVICE HISTORY。
+==================================================
+
+################################################################
+#
+# G. COMPLETION DAG
+#
+################################################################
+
+对最优 deletion completion：
+
+先 minimize J cost，
+再 minimize changed copies。
+
+changed support
+按 reference orientation
+组成：
+
+==================================================
+DIRECTED ACYCLIC GRAPH。
+==================================================
+
+但 DAG：
+
+    does NOT imply
+    immediate serializability。
+
+tight-cut dependency
+仍可能形成 service cycles。
+
+################################################################
+#
+# H. MODEL-2 COMMON-S COMPONENT THEOREM
+#
+################################################################
+
+把以下 cross-model result
+作为新的结构输入，
+但你必须自行 proof-audit
+再正式使用。
+
+在 genuine physical
+K-frozen connected component C 中，
+若：
+
+    Prog(D)=empty
+    throughout C，
+
+并在某 state存在 family S：
+
+    actual-tight；
+    source-closed；
+    K-progress-blocking，
+
+则同一个 S
+在整个 C：
+
+    actual-tight；
+    source-closed；
+    blocks same Wrong_K。
+
+而且 every component flip：
+
+==================================================
+IS S-NEUTRAL。
+==================================================
+
+定义 Boolean signature：
+
+    sigma_S(v)
+    =
+    (1_{v in Y})_{Y in S}。
+
+则：
+
+==================================================
+physical edge e is S-neutral
+iff
+its endpoints belong to
+the same S-atom。
+==================================================
+
+所以：
+
+    every component move atom-internal；
+
+    every cross-atom edge frozen；
+
+    all Wrong_K edges
+    are frozen quotient edges。
+
+################################################################
+#
+# I. MODEL-2 ATOM PRODUCT THEOREM
+#
+################################################################
+
+固定 common S。
+
+对 arbitrary cut X，
+若 X splits >=2 distinct S-atoms，
+
+可找 tight：
+
+    Y in S
+
+separating two split atoms。
+
+exact slack uncrossing：
+
+    s(X)+s(Y)
+    =
+    s(X∩Y)
+    +
+    s(X∪Y)
+    +
+    nonnegative defects。
+
+因为：
+
+    s(Y)=0，
+
+multi-atom cut inequalities
+递归 reduce to：
+
+    zero-split cuts；
+
+    one-partial-atom cuts。
+
+因此：
+
+==================================================
+ALL MULTI-ATOM CUT CONSTRAINTS
+ARE REDUNDANT
+ON THE COMMON-S FACE。
+==================================================
+
+对 atom B：
+
+    p_B(U)
+    =
+    max over whole-other-atom unions Z
+    [
+      p(U∪Z)-c_Q(U,Z)
+    ]。
+
+已有：
+
+    p_B integer；
+    crossing-supermodular；
+    possibly negative。
+
+固定 quotient Q：
+
+==================================================
+GLOBAL FEASIBLE SET
+=
+PRODUCT_B O_B。
+==================================================
+
+并且：
+
+==================================================
+GLOBAL LEGAL FLIP GRAPH
+=
+CARTESIAN PRODUCT_B G_B。
+==================================================
+
+physical component：
+
+==================================================
+C(D)
+=
+PRODUCT_B C_B(D_B)。
+==================================================
+
+这一 result如果 proof audit通过，
+优先尝试接入 MAIN THEOREM。
+
+################################################################
+#
+# J. TERMINAL SERVICE-SCC RESULTS
+#
+################################################################
+
+已有另外一条 terminal route：
+
+    two-row closed service SCC:
+        impossible；
+
+    three-row closed service SCC:
+        impossible。
+
+更强：
+
+==================================================
+MINIMUM CLOSED SERVICE SCC SIZE >=4。
+==================================================
+
+three-row proof包含：
+
+    DDD；
+    CCC；
+    mixed D/C；
+    all-service audit。
+
+general partition skew：
+
+==================================================
+|Phi|<=1。
+==================================================
+
+反复出现 schema：
+
+==================================================
+SERVICE-CLOSURE DEMAND
+EXCEEDS
+CRITICAL BOUNDARY SKEW BUDGET
+BY ONE UNIT。
+==================================================
+
+conjecture：
+
+    no finite closed service SCC
+
+尚未一般证明。
+
+这可以成为 polarity termination
+失败时的重要备用 route。
+
+################################################################
+#
+# K. TERMINAL HOLE-OVERLOAD RESULT
+#
+################################################################
+
+已有：
+
+    k=2 TYPE-I c_M=1:
+        impossible；
+
+    k=3 TYPE-C/R0 minimum face:
+        impossible。
+
+后者来自 reusable：
+
+==================================================
+HOLE-OVERLOAD LEMMA。
+==================================================
+
+如果：
+
+    Y=A-W tight；
+
+    W subset H；
+
+    H tight；
+
+且：
+
+    every W->H-W
+    would be strict source，
+
+则：
+
+    d^+(W)<=d^+(H)。
+
+而：
+
+    slack(W)=mu(Y)>=1。
+
+所以：
+
+==================================================
+q(W)
+>=
+q(H)+mu(Y)。
+==================================================
+
+若：
+
+    q(W)<=q(H)
+
+则 contradiction。
+
+这可能是 terminal
+local overload工具。
+
+################################################################
+#
+# MAIN PROOF PROGRAM
+#
+################################################################
+
+你现在不要机械照着下面顺序走。
+
+这是优先建议。
+
+如果发现更短路线，
+直接切换。
+
+但最终必须回到：
+
+==================================================
+PROVE Omega_k(G) CONNECTED。
+==================================================
+
+################################################################
+#
+# PHASE 1.
+# SET UP A TRUE MINIMUM COUNTEREXAMPLE
+#
+################################################################
+
+Assume theorem false。
+
+取 counterexample G
+with lexicographic minimality。
+
+你必须自己决定
+最适合证明的 minimum measure，
+例如：
+
+    |V(G)|；
+
+    |E(G)|；
+
+    number of critical mincut blocks；
+
+    size of ambient separated component；
+
+    difference support；
+
+    descendant |K|。
+
+但是：
+
+==================================================
+DEFINE IT ONCE
+AND DO NOT SILENTLY CHANGE IT。
+==================================================
+
+取两个 orientations：
+
+    D0,D1
+
+in different physical
+single-edge-flip components。
+
+利用 known degree/path/circuit macro theory，
+把 difference压到：
+
+    single path
+or
+    single circuit
+
+if合法。
+
+若这个 reduction依赖 theorem scope，
+严格 audit。
+
+################################################################
+#
+# PHASE 2.
+# CONTRACT EVERYTHING THAT IS NOT GENUINELY CRITICAL
+#
+################################################################
+
+使用 mu>=2 connectivity theorem。
+
+任何 nontrivial critical block
+whose proper internal cuts all mu>=2：
+
+    strictify；
+    contract；
+    solve quotient；
+    lift；
+    restore。
+
+利用 minimum counterexample：
+
+==================================================
+NO CONTRACTIBLE
+NONTRIVIAL CRITICAL BLOCK
+MAY REMAIN。
+==================================================
+
+得到：
+
+    inclusion-minimal mincuts singleton。
+
+继续问：
+
+是否能把所有
+non-singleton mu>=2 regions
+系统收缩，
+直到 obstruction skeleton
+只由 critical singleton
+和 frozen quotient edges组成。
+
+如果可以：
+
+==================================================
+PROVE IT AS A FORMAL REDUCTION THEOREM。
+==================================================
+
+################################################################
+#
+# PHASE 3.
+# TRY TO MERGE ATOM PRODUCT WITH CONTRACTION
+#
+################################################################
+
+对 K-frozen obstruction component
+取 common S。
+
+若某 S-atom B
+有 |B|>=2：
+
+先检查 B 的 proper cuts
+是否全部 mu>=2。
+
+CASE A：
+    YES。
+
+则 fixed outside quotient
+应给 B 一个
+mu>=2 fixed-boundary fiber。
+
+由 Codex theorem：
+
+    G_B connected。
+
+CASE B：
+    NO。
+
+则 B contains a mu=1 shore。
+
+由于 minimum critical shores singleton，
+研究这个 mu=1 shore
+如何可能完全藏在同一 S-atom。
+
+如果它是 singleton v，
+为什么 S 没把 v
+和 atom内其它 vertices区分？
+
+这应产生：
+
+    missing critical row；
+    source；
+    alternative blocker；
+    or quotient certificate。
+
+尝试证明 CASE B incompatible
+with minimal common S。
+
+==================================================
+DESIRED RESULT
+==================================================
+
+Every nontrivial S-atom
+has connected local fiber。
+
+################################################################
+#
+# PHASE 4.
+# CONTRACT S-ATOMS
+#
+################################################################
+
+如果 all atom fibers connected，
+
+fixed quotient sector
+本身 connected。
+
+Contract every S-atom。
+
+For whole-atom quotient cuts T：
+
+    q_Q(T)
+    =
+    original q(union T)；
+
+    mu_Q(T)
+    =
+    original mu(union T)；
+
+    d_Q^+(T)
+    =
+    original d^+(union T)。
+
+严格证明 quotient
+仍是 genuine critical
+terminal system。
+
+如果 quotient has fewer vertices
+且仍 carries component separation：
+
+==================================================
+CONTRADICT MINIMALITY。
+==================================================
+
+所以理想结论：
+
+==================================================
+IN A MINIMUM COUNTEREXAMPLE,
+EVERY COMMON-S ATOM IS SINGLETON。
+==================================================
+
+如果这一步失败，
+找到 exact failure mechanism。
+
+不要笼统说“不清楚”。
+
+################################################################
+#
+# PHASE 5.
+# IDENTIFY THE IRREDUCIBLE PROBLEM
+#
+################################################################
+
+如果所有 atoms singleton，
+那么：
+
+    frozen Boolean quotient
+    is the whole current vertex set。
+
+结合 critical contraction：
+
+尝试证明：
+
+==================================================
+EVERY RELEVANT TIGHT ROW
+IS GENERATED BY
+CRITICAL SINGLETON POLARITIES。
+==================================================
+
+最终把 obstruction写成：
+
+    degree 2k+1 critical singleton network；
+
+    each vertex has OUT/IN color；
+
+    legal flip exchanges endpoint colors
+    subject to larger cut constraints。
+
+这应该与 Codex 当前
+critical-singleton zero-descent frontier
+精确汇合。
+
+################################################################
+#
+# PHASE 6.
+# PROVE POLARITY TERMINATION
+#
+################################################################
+
+这是目前预计最核心的一步。
+
+对 critical singleton v：
+
+state：
+
+    + := out(v)=k+1；
+    - := out(v)=k。
+
+每次 incident legal flip
+swaps two endpoint contributions。
+
+不要只看 vertex degrees。
+
+必须同时保护：
+
+    all larger global cuts。
+
+利用：
+
+    global mincuts cross-free；
+
+    mincut laminar / tree structure；
+
+    safe endpoint lemma；
+
+    maximal tight blocks；
+
+    near-tight blocks；
+
+    strictification of mu>=2 regions。
+
+尝试构造：
+
+==================================================
+A FINITE SERVICE ALGORITHM
+FOR A DESIRED POLARITY TRANSFER。
+==================================================
+
+允许：
+
+    temporary reversals；
+
+    ancestor buffers；
+
+    long service chains；
+
+    arbitrary finite depth。
+
+禁止：
+
+    constant-width requirement。
+
+################################################################
+#
+# PHASE 7.
+# TREE SERVICE / CHIP TRANSFER MODEL
+#
+################################################################
+
+把 odd global mincut shores
+组织成 cross-free tree。
+
+critical singletons是叶/atoms。
+
+尝试把 OUT/IN polarity
+解释成：
+
+    token；
+    chip；
+    charge；
+    imbalance。
+
+一个 target flip被 blocker阻止时，
+沿 laminar tree向上 service blocker。
+
+如果遇到 mu>=2 block：
+
+    strictify and remove it。
+
+如果遇到 critical singleton：
+
+    polarity swaps，
+    token moves。
+
+目标：
+
+==================================================
+TOKEN CANNOT CYCLE FOREVER。
+==================================================
+
+需要一个 well-founded measure。
+
+候选：
+
+1.
+    lexicographic multiset
+    of blocker depths；
+
+2.
+    sum of distances
+    of critical tokens
+    to target endpoints；
+
+3.
+    ordered laminar-tree profile；
+
+4.
+    ancestor-rank vector；
+
+5.
+    minimal unresolved target edge
+    plus blocker depth；
+
+6.
+    primal completion cost
+    + history rank；
+
+7.
+    optimal dual support
+    + universally-tight guard rank。
+
+不要因为一个 scalar potential失败
+就放弃 tree-valued potential。
+
+################################################################
+#
+# PHASE 8.
+# USE COMPLETION DAG
+#
+################################################################
+
+如果 polarity route需要
+知道目标 support：
+
+取 deletion completion
+minimum J-cost，
+then minimum changed copies。
+
+changed support DAG。
+
+在 DAG中选择：
+
+    source edge；
+    sink edge；
+    topological extremal edge。
+
+若它 illegal，
+取 actual-tight blocker。
+
+递归 service blocker。
+
+由于 physical support DAG，
+尝试证明：
+
+    blocker recursion
+    cannot return to same
+    support configuration
+
+without either：
+
+    consuming a DAG edge；
+
+    moving polarity token
+    strictly on mincut tree；
+
+    exposing legal target progress。
+
+构造 combined well-founded pair：
+
+==================================================
+(DAG topological rank,
+ critical-tree potential)。
+==================================================
+
+这是很值得尝试的新 master potential。
+
+################################################################
+#
+# PHASE 9.
+# USE OPTIMAL DUAL GUARDS ONLY CORRECTLY
+#
+################################################################
+
+已有 exact LP fact：
+
+guard U
+can have positive coefficient
+in some optimal dual
+
+iff：
+
+    U tight in EVERY optimal primal completion。
+
+所以对于 illegal desired edge：
+
+CASE 1：
+    blocker universally tight。
+
+Then：
+    put it into optimal dual support。
+
+CASE 2：
+    blocker not universally tight。
+
+Then：
+    choose an optimal completion
+    with positive slack on it。
+
+利用这个 dichotomy：
+
+==================================================
+UNIVERSALLY-TIGHT BLOCKERS
+GO TO DUAL STRUCTURE；
+
+NONUNIVERSAL BLOCKERS
+GIVE PRIMAL ESCAPE SLACK。
+==================================================
+
+尝试构造 alternating primal-dual
+service algorithm。
+
+注意：
+
+relative source
+!=
+globally legal positive-gradient edge。
+
+不要复活已经 falsified inference。
+
+################################################################
+#
+# PHASE 10.
+# SERVICE-SCC ESCAPE
+#
+################################################################
+
+如果 recursive service
+形成 dependency SCC：
+
+已知：
+
+    SCC size1：
+        no genuine closed obstruction；
+
+    size2：
+        impossible；
+
+    size3：
+        impossible。
+
+对 size>=4：
+
+优先尝试一般 theorem：
+
+==================================================
+NO FINITE CLOSED SERVICE SCC
+IN A TRUE-CRITICAL SYSTEM。
+==================================================
+
+使用 general partition skew：
+
+    |Phi|<=1。
+
+尝试把 SCC压成：
+
+    D/C cross-free geometry；
+
+    remainder slack；
+
+    hole slack；
+
+    service-demand budget。
+
+寻找 general invariant：
+
+==================================================
+CLOSED SCC
+REQUIRES >=2 UNITS
+OF UNSUPPLIED SERVICE DEBT，
+
+BUT CRITICAL BOUNDARY
+ONLY HAS ONE SKEW UNIT。
+==================================================
+
+如果 general SCC theorem成立，
+polarity/service recursion
+自动必须 eventually leak：
+
+    legal service
+or
+    new row。
+
+finite row universe then
+eventually gives legal progress。
+
+################################################################
+#
+# PHASE 11.
+# FINITENESS / TERMINATION
+#
+################################################################
+
+不要用：
+
+    finite state space
+    =>
+    process terminates。
+
+这是错误的。
+
+必须排除循环。
+
+可以使用：
+
+    deterministic canonical choice；
+
+    lexicographic history；
+
+    no-repeat certificate；
+
+    strictly decreasing multiset；
+
+    acyclic support；
+
+    laminar tree rank；
+
+    minimum-origin extremality。
+
+最终需要一个 theorem：
+
+==================================================
+EVERY BLOCKED TARGET PROGRESS
+ADMITS A FINITE LEGAL SERVICE WORD
+AFTER WHICH EITHER
+
+    TARGET PROGRESSES
+
+OR
+
+    A STRICTLY SMALLER
+    COUNTEREXAMPLE / DESCENDANT
+    IS PRODUCED。
+==================================================
+
+################################################################
+#
+# PHASE 12.
+# TURN LOCAL PROGRESS INTO GLOBAL CONNECTIVITY
+#
+################################################################
+
+一旦得到：
+
+    any outstanding target edge/path/circuit
+    can make finite progress，
+
+构造从 D0 到 D1 的完整合法词。
+
+可以按：
+
+    Hamming distance；
+    degree distance；
+    difference macro decomposition；
+    minimum descendant recursion
+
+做 outer induction。
+
+要求：
+
+==================================================
+EVERY OUTER STEP
+STRICTLY REDUCES A FINITE
+GLOBAL TARGET MEASURE。
+==================================================
+
+直到 D1。
+
+这才完成 MAIN THEOREM。
+
+################################################################
+#
+# ALTERNATIVE ROUTE:
+# DIRECT MINIMUM-COUNTEREXAMPLE CONTRADICTION
+#
+################################################################
+
+如果 constructive serialization过重，
+
+允许反证：
+
+取 minimum counterexample。
+
+derive：
+
+    critical singleton only；
+
+    atom singleton only；
+
+    no finite service SCC；
+
+    no legal target progress；
+
+    no source；
+
+then use:
+
+    cross-free source lower bound
+
+to force a legal source。
+
+If every legal source is
+target-neutral / wrong-direction，
+
+use finite source count
+and partition skew
+to derive contradiction。
+
+这条路线可能比
+explicit target algorithm短。
+
+################################################################
+#
+# COUNTEREXAMPLE SEARCH POLICY
+#
+################################################################
+
+你可以主动搜索反例。
+
+但搜索目标必须是：
+
+==================================================
+GENUINE AMBIENT DISCONNECTED
+Omega_k(G)。
+==================================================
+
+不是：
+
+    frozen-J disconnected；
+
+    fixed-target obstruction；
+
+    terminal-realizable gadget；
+
+    local service SCC；
+
+    large Debt；
+
+    large width；
+
+    no-first-move restriction。
+
+如果找到 candidate：
+
+1.
+    verify lambda>=2k+1；
+
+2.
+    enumerate all k-arc-strong orientations
+       in relevant finite graph；
+
+3.
+    enumerate ALL legal
+       physical single-edge flips；
+
+4.
+    verify >1 connected component；
+
+5.
+    independently recheck cuts；
+
+6.
+    provide explicit graph
+       and two separated orientations。
+
+只有满足以上，
+才是主定理反例。
+
+################################################################
+#
+# PROOF AUDIT POLICY
+#
+################################################################
+
+任何声称 MAIN THEOREM proved 前，
+至少做四轮 audit：
+
+==================================================
+AUDIT 1 — SCOPE
+==================================================
+
+是否偷用了：
+
+    p>=0
+
+在 signed descendant？
+
+是否把：
+
+    fixed-fiber disconnected
+
+当 ambient disconnected？
+
+是否把：
+
+    relative source
+
+当 globally legal？
+
+是否把：
+
+    terminal-realizable
+
+当 minimum-origin？
+
+==================================================
+AUDIT 2 — EDGE-BY-EDGE LEGALITY
+==================================================
+
+每个 macro
+必须真的能逐 physical edge执行，
+
+或者清楚引用
+已经证明的 serialization theorem。
+
+不能只证明终态 feasible。
+
+==================================================
+AUDIT 3 — MINIMALITY
+==================================================
+
+每个 descent
+必须明确减少
+一开始定义的 minimum measure。
+
+不能在证明中途
+更换 minimality。
+
+==================================================
+AUDIT 4 — ALL CUTS
+==================================================
+
+任何 local/atom/quotient argument
+必须说明为什么：
+
+    untracked cuts；
+    crossing cuts；
+    co-cover cuts；
+    root-containing cuts
+
+不会成为遗漏 blocker。
+
+################################################################
+#
+# FAILURE POLICY
+#
+################################################################
+
+不要因为：
+
+    一条路线卡住；
+    一个 lemma false；
+    一个 potential失败
+
+就结束研究。
+
+正确流程：
+
+    isolate failure；
+    produce counterexample；
+    add to DEAD list；
+    extract what remains true；
+    switch route；
+    continue toward MAIN THEOREM。
+
+只有三种合法的最终输出：
+
+==================================================
+FINAL A — THEOREM PROVED
+==================================================
+
+给：
+
+    complete proof architecture；
+
+    all lemmas；
+
+    dependency order；
+
+    exact theorem scopes；
+
+    no hidden computational assumption；
+
+    full audit。
+
+==================================================
+FINAL B — GENUINE COUNTEREXAMPLE FOUND
+==================================================
+
+给：
+
+    explicit graph；
+    lambda；
+    k；
+    two orientations；
+    exhaustive component certificate；
+    independent verification。
+
+==================================================
+FINAL C — ONE PRECISE IRREDUCIBLE GAP
+==================================================
+
+只有当经过多条路线后，
+所有剩余工作确实集中到
+一个 sharply formulated statement，
+才允许停止。
+
+此时必须给：
+
+    exact lemma statement；
+
+    why it alone would finish theorem；
+
+    all attempted proof routes；
+
+    exact counterexamples to stronger variants；
+
+    smallest unresolved finite model；
+
+    recommended next proof attack。
+
+“取得了若干进展”
+不是合法 final output。
+
+################################################################
+#
+# HIGH-PRIORITY TARGET
+#
+################################################################
+
+当前最值得首先尝试的 chain 是：
+
+==================================================
+MINIMUM COUNTEREXAMPLE
+
+->
+
+MU>=2 BLOCK CONTRACTION
+
+->
+
+COMMON-S COMPONENT
+
+->
+
+ATOM PRODUCT DECOMPOSITION
+
+->
+
+NONTRIVIAL ATOMS CONTRACT / CONNECT
+
+->
+
+PURE CRITICAL-SINGLETON QUOTIENT
+
+->
+
+LAMINAR MINCUT TREE POLARITY SERVICE
+
+->
+
+FINITE TERMINATION
+
+->
+
+TARGET PROGRESS
+
+->
+
+GLOBAL CONNECTIVITY。
+==================================================
+
+如果其中任何箭头可以跳过，
+直接跳。
+
+如果其中任何箭头 false，
+找反例并改造架构。
+
+################################################################
+#
+# FINAL INSTRUCTION
+#
+################################################################
+
+不要把自己定位成：
+
+    “继续探索这个问题”。
+
+把自己定位成：
+
+==================================================
+YOU ARE TRYING TO FINISH THE PROOF
+OF THE ORIGINAL 2k+1 CONNECTIVITY THEOREM。
+==================================================
+
+现有结果已经足够多，
+现在最重要的是：
+
+    synthesis；
+    induction；
+    termination；
+    scope discipline。
+
+持续工作，
+直到：
+
+    theorem proof closes，
+
+or：
+
+    a genuine counterexample is verified，
+
+or：
+
+    the entire remaining difficulty
+    is compressed to one exact lemma
+    whose proof would mechanically
+    finish the theorem。
+
+==================================================
+PRIMARY GOAL:
+PROVE THE ORIGINAL THEOREM。
+==================================================

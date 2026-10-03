@@ -1,0 +1,8 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "verify_terminal_unbounded_debt.py": "028ed28c2020cd1a28889d74ea2704cecb00fc476b69f615a669900f5d7e70f0",
+    "terminal_unbounded_debt_certificate.json": "fbce0b8008cb0b1a36ae229b8b37873a16f51ff0d8b388e6c9be37e506366328",
+    "terminal_unbounded_debt_summary.json": "9439ff743bdff9ffe3690dd3f663e483ec05ac0c23b81e1c0138b6442cd9d823"
+  }
+}

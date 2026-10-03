@@ -1,0 +1,849 @@
+{
+  "status": "PASS; CONNECTED CONTROL, not main-theorem counterexample",
+  "vertices": [
+    "a",
+    "b",
+    "c",
+    "r"
+  ],
+  "physical_edges": [
+    {
+      "id": "ab0",
+      "tail": 0,
+      "head": 1
+    },
+    {
+      "id": "ba0",
+      "tail": 1,
+      "head": 0
+    },
+    {
+      "id": "ac0",
+      "tail": 0,
+      "head": 2
+    },
+    {
+      "id": "bc0",
+      "tail": 1,
+      "head": 2
+    },
+    {
+      "id": "ca0",
+      "tail": 2,
+      "head": 0
+    },
+    {
+      "id": "ca1",
+      "tail": 2,
+      "head": 0
+    },
+    {
+      "id": "ca2",
+      "tail": 2,
+      "head": 0
+    },
+    {
+      "id": "cb0",
+      "tail": 2,
+      "head": 1
+    },
+    {
+      "id": "cb1",
+      "tail": 2,
+      "head": 1
+    },
+    {
+      "id": "cb2",
+      "tail": 2,
+      "head": 1
+    },
+    {
+      "id": "cr0",
+      "tail": 2,
+      "head": 3
+    },
+    {
+      "id": "cr1",
+      "tail": 2,
+      "head": 3
+    },
+    {
+      "id": "rc0",
+      "tail": 3,
+      "head": 2
+    },
+    {
+      "id": "rc1",
+      "tail": 3,
+      "head": 2
+    },
+    {
+      "id": "rc2",
+      "tail": 3,
+      "head": 2
+    }
+  ],
+  "k": 2,
+  "lambda": 5,
+  "actual_tight_family": [
+    3
+  ],
+  "atoms": [
+    3,
+    4
+  ],
+  "global_residual": [
+    {
+      "mask": 1,
+      "p": 2,
+      "q": 0,
+      "slack": 0,
+      "mu": 2
+    },
+    {
+      "mask": 2,
+      "p": 2,
+      "q": 0,
+      "slack": 0,
+      "mu": 2
+    },
+    {
+      "mask": 3,
+      "p": 2,
+      "q": 0,
+      "slack": 0,
+      "mu": 4
+    },
+    {
+      "mask": 4,
+      "p": 2,
+      "q": 0,
+      "slack": 4,
+      "mu": 4
+    },
+    {
+      "mask": 5,
+      "p": 2,
+      "q": 0,
+      "slack": 2,
+      "mu": 2
+    },
+    {
+      "mask": 6,
+      "p": 2,
+      "q": 0,
+      "slack": 2,
+      "mu": 2
+    }
+  ],
+  "projected_demand": {
+    "1": 1,
+    "2": 1
+  },
+  "local_mu": 0,
+  "fixed_sector_assignments": [
+    {
+      "bits": [
+        0,
+        0
+      ],
+      "minimum_out": 2,
+      "legal": true,
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 2,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 8,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 5,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 6,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 4,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 4,
+          "undirected": 6
+        }
+      ]
+    },
+    {
+      "bits": [
+        0,
+        1
+      ],
+      "minimum_out": 1,
+      "legal": false,
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 1,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 2,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 8,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 7,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 4,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 5,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 6,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 5,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 3,
+          "undirected": 6
+        }
+      ]
+    },
+    {
+      "bits": [
+        1,
+        0
+      ],
+      "minimum_out": 1,
+      "legal": false,
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 1,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 2,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 8,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 7,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 4,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 5,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 6,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 5,
+          "undirected": 6
+        }
+      ]
+    },
+    {
+      "bits": [
+        1,
+        1
+      ],
+      "minimum_out": 2,
+      "legal": true,
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 2,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 8,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 5,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 6,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 4,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 4,
+          "undirected": 6
+        }
+      ]
+    }
+  ],
+  "fixed_sector_components": 2,
+  "ambient_connecting_word": [
+    {
+      "move": "initial",
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 2,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 8,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 5,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 6,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 4,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 4,
+          "undirected": 6
+        }
+      ],
+      "minimum_out": 2
+    },
+    {
+      "move": "ca0",
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 3,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 7,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 6,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 5,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 4,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 3,
+          "undirected": 6
+        }
+      ],
+      "minimum_out": 2
+    },
+    {
+      "move": "ab0",
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 3,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 7,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 6,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 5,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 4,
+          "undirected": 6
+        }
+      ],
+      "minimum_out": 2
+    },
+    {
+      "move": "ba0",
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 3,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 3,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 7,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 6,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 5,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 4,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 3,
+          "undirected": 6
+        }
+      ],
+      "minimum_out": 2
+    },
+    {
+      "move": "ca0",
+      "cuts": [
+        {
+          "mask": 1,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 2,
+          "out": 2,
+          "undirected": 6
+        },
+        {
+          "mask": 3,
+          "out": 2,
+          "undirected": 8
+        },
+        {
+          "mask": 4,
+          "out": 8,
+          "undirected": 13
+        },
+        {
+          "mask": 5,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 6,
+          "out": 6,
+          "undirected": 11
+        },
+        {
+          "mask": 7,
+          "out": 2,
+          "undirected": 5
+        },
+        {
+          "mask": 8,
+          "out": 3,
+          "undirected": 5
+        },
+        {
+          "mask": 9,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 10,
+          "out": 5,
+          "undirected": 11
+        },
+        {
+          "mask": 11,
+          "out": 5,
+          "undirected": 13
+        },
+        {
+          "mask": 12,
+          "out": 6,
+          "undirected": 8
+        },
+        {
+          "mask": 13,
+          "out": 4,
+          "undirected": 6
+        },
+        {
+          "mask": 14,
+          "out": 4,
+          "undirected": 6
+        }
+      ],
+      "minimum_out": 2
+    }
+  ]
+}

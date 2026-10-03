@@ -1,0 +1,8 @@
+{
+  "ground_size": 4,
+  "cross_free_no_complement_families": 552,
+  "FULL_supported_candidate_terminal_splits": 158,
+  "counterexample": null,
+  "scope": "No MAIN triggers; no residual feasibility or terminal-origin claims. Geometric finite control only.",
+  "maximal_choice_justification": "Any counterexample physical set is included in this maximal allowed set. Adding allowed edges cannot create a relative source in full T (all have N nonempty), preserves its proposed terminal private split, and can only destroy source-free proper subsets. FULL support remains available."
+}

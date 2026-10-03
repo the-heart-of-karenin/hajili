@@ -1,0 +1,417 @@
+{
+  "status": "PASS: positive nonoptimal Debt, no legal positive original gradient",
+  "scope": "genuine k2 L2 connected control; not optimal/minimum-origin counterexample",
+  "vertices": [
+    "w",
+    "w1",
+    "y",
+    "y1",
+    "c",
+    "root"
+  ],
+  "physical_edges": [
+    {
+      "id": "K_w_y_0",
+      "kind": "K",
+      "tail": 0,
+      "head": 2
+    },
+    {
+      "id": "K_y_w_0",
+      "kind": "K",
+      "tail": 2,
+      "head": 0
+    },
+    {
+      "id": "J_w_w1_0",
+      "kind": "J",
+      "tail": 0,
+      "head": 1
+    },
+    {
+      "id": "J_w1_w_0",
+      "kind": "J",
+      "tail": 1,
+      "head": 0
+    },
+    {
+      "id": "J_w1_c_0",
+      "kind": "J",
+      "tail": 1,
+      "head": 4
+    },
+    {
+      "id": "J_c_w1_0",
+      "kind": "J",
+      "tail": 4,
+      "head": 1
+    },
+    {
+      "id": "J_c_w1_1",
+      "kind": "J",
+      "tail": 4,
+      "head": 1
+    },
+    {
+      "id": "J_y_y1_0",
+      "kind": "J",
+      "tail": 2,
+      "head": 3
+    },
+    {
+      "id": "J_y1_y_0",
+      "kind": "J",
+      "tail": 3,
+      "head": 2
+    },
+    {
+      "id": "J_y1_c_0",
+      "kind": "J",
+      "tail": 3,
+      "head": 4
+    },
+    {
+      "id": "J_c_y1_0",
+      "kind": "J",
+      "tail": 4,
+      "head": 3
+    },
+    {
+      "id": "J_c_y1_1",
+      "kind": "J",
+      "tail": 4,
+      "head": 3
+    },
+    {
+      "id": "B_c_root_0",
+      "kind": "B",
+      "tail": 4,
+      "head": 5
+    },
+    {
+      "id": "B_c_root_1",
+      "kind": "B",
+      "tail": 4,
+      "head": 5
+    },
+    {
+      "id": "B_root_w_0",
+      "kind": "B",
+      "tail": 5,
+      "head": 0
+    },
+    {
+      "id": "B_root_w_1",
+      "kind": "B",
+      "tail": 5,
+      "head": 0
+    },
+    {
+      "id": "B_root_y_0",
+      "kind": "B",
+      "tail": 5,
+      "head": 2
+    }
+  ],
+  "positive_rows": [
+    [
+      "w"
+    ],
+    [
+      "y"
+    ]
+  ],
+  "original_phi": {
+    "w": 1,
+    "w1": 0,
+    "y": 1,
+    "y1": 0,
+    "c": 0,
+    "root": 0
+  },
+  "R_audit": {
+    "min_outgoing": 2,
+    "tight_masks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      12,
+      13,
+      15,
+      31,
+      37,
+      39,
+      45,
+      47
+    ],
+    "ordered_full_cut_outgoing_values": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      4,
+      4,
+      4,
+      2,
+      2,
+      4,
+      2,
+      6,
+      8,
+      5,
+      5,
+      8,
+      8,
+      7,
+      5,
+      5,
+      7,
+      4,
+      4,
+      5,
+      5,
+      4,
+      2,
+      3,
+      3,
+      5,
+      3,
+      4,
+      2,
+      6,
+      2,
+      5,
+      5,
+      7,
+      5,
+      4,
+      2,
+      6,
+      2,
+      7,
+      7,
+      6,
+      4,
+      8,
+      6,
+      7,
+      3,
+      6,
+      6,
+      5,
+      3,
+      5,
+      3,
+      4
+    ]
+  },
+  "antipode_audit": {
+    "min_outgoing": 2,
+    "tight_masks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      12,
+      13,
+      15,
+      31,
+      37,
+      39,
+      45,
+      47
+    ],
+    "ordered_full_cut_outgoing_values": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      4,
+      4,
+      4,
+      2,
+      2,
+      4,
+      2,
+      6,
+      8,
+      5,
+      5,
+      8,
+      8,
+      7,
+      5,
+      5,
+      7,
+      4,
+      4,
+      5,
+      5,
+      4,
+      2,
+      3,
+      3,
+      5,
+      3,
+      4,
+      2,
+      6,
+      2,
+      5,
+      5,
+      7,
+      5,
+      4,
+      2,
+      6,
+      2,
+      7,
+      7,
+      6,
+      4,
+      8,
+      6,
+      7,
+      3,
+      6,
+      6,
+      5,
+      3,
+      5,
+      3,
+      4
+    ]
+  },
+  "internal_single_flip_records": [
+    {
+      "id": "K_w_y_0",
+      "tail": "w",
+      "head": "y",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "K_y_w_0",
+      "tail": "y",
+      "head": "w",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_w_w1_0",
+      "tail": "w",
+      "head": "w1",
+      "original_gradient": -1,
+      "relative_F_source": false,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_w1_w_0",
+      "tail": "w1",
+      "head": "w",
+      "original_gradient": 1,
+      "relative_F_source": true,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_w1_c_0",
+      "tail": "w1",
+      "head": "c",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_c_w1_0",
+      "tail": "c",
+      "head": "w1",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": true,
+      "flipped_state_min_outgoing": 2
+    },
+    {
+      "id": "J_c_w1_1",
+      "tail": "c",
+      "head": "w1",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": true,
+      "flipped_state_min_outgoing": 2
+    },
+    {
+      "id": "J_y_y1_0",
+      "tail": "y",
+      "head": "y1",
+      "original_gradient": -1,
+      "relative_F_source": false,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_y1_y_0",
+      "tail": "y1",
+      "head": "y",
+      "original_gradient": 1,
+      "relative_F_source": true,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_y1_c_0",
+      "tail": "y1",
+      "head": "c",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": false,
+      "flipped_state_min_outgoing": 1
+    },
+    {
+      "id": "J_c_y1_0",
+      "tail": "c",
+      "head": "y1",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": true,
+      "flipped_state_min_outgoing": 2
+    },
+    {
+      "id": "J_c_y1_1",
+      "tail": "c",
+      "head": "y1",
+      "original_gradient": 0,
+      "relative_F_source": false,
+      "globally_legal": true,
+      "flipped_state_min_outgoing": 2
+    }
+  ],
+  "dual_terms": {
+    "P_e": 1,
+    "S_R": 0,
+    "L_K": 0,
+    "L_J": 0,
+    "Debt": 1
+  }
+}

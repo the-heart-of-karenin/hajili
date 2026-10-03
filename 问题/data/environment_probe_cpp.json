@@ -1,0 +1,10 @@
+{
+  "vertices": 2,
+  "physical_edges": 5,
+  "k": 2,
+  "orientations_checked": 32,
+  "legal_orientations": 20,
+  "reconfiguration_edges": 30,
+  "components": 1,
+  "maximum_component_diameter": 5
+}

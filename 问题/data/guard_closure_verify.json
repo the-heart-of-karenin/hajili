@@ -1,0 +1,17 @@
+{
+  "classification": "EXACT_FINITE_LOGICAL_ALGORITHM_CHECK; not terminal or graph enumeration",
+  "rows": 3,
+  "signatures": 38,
+  "signature_systems": 741,
+  "candidate_universe_checks": 5928,
+  "union_model_pair_checks": 15903,
+  "status": "PASS",
+  "example_source_free_masks": [
+    0,
+    7
+  ],
+  "example_core_mask": 3,
+  "example_maximum_inside_core": 0,
+  "elapsed_seconds": 0.019268,
+  "code_sha256": "3d22f03ee293e2b86f5bcc442d5af464ea42c24a5c4a271c8145babce94666ba"
+}
